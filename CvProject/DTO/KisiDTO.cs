@@ -41,7 +41,7 @@ namespace CvProject.DTO
         public string? Biyografi { get; set; }
 
         [Browsable(false)]
-        public List<KisiIs> KisiIsler { get; set; } = new List<KisiIs>();
+        public List<KisiIsDTO> KisiIsler { get; set; } = new List<KisiIsDTO>();
 
         [Browsable(false)]
         public Sehir? Sehir { get; set; }

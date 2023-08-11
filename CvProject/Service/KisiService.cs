@@ -37,7 +37,33 @@ namespace CvProject.Service
                 DogumTarihi = kisi.DogumTarihi,
                 SehirId = kisi.SehirId,
                 Adi = kisi.Adi,
-                Soyadi = kisi.Soyadi
+                Soyadi = kisi.Soyadi,
+
+                KisiIsler = kisi.KisiIsler.Select(kis => new KisiIsDTO()
+                {
+                    KisiId = kis.KisiId,
+                    IsId = kis.IsId,
+                    BaslangicTarihi = kis.BaslangicTarihi,
+                    BitisTarihi = kis.BitisTarihi,
+                    Is = kis.Is,
+                    Kisi = kis.Kisi
+                }).ToList(),
+
+                
+
+                
+
+                //MaasListesi = personel.Maas.Select(maas => new MaasModel()
+                //{
+                //    Yil = maas.Yil,
+                //    Ucret = maas.Ucret,
+
+                //    UcretiGosterim = maas.Ucret.ToString("C2", new CultureInfo("tr-TR"))
+                //}).ToList()
+
+
+
+
             });
 
             query = query.OrderBy(k => k.AdSoyadGosterim);
@@ -83,6 +109,7 @@ namespace CvProject.Service
             _db.SaveChanges();
             
         }
+
 
 
         public void Sil(int id)

@@ -49,7 +49,6 @@ namespace CvProject
 
             List<IsDTO> isList = _mevcutKisi.KisiIsler.Select(kis => new IsDTO
             {
-                Id = kis.IsId,
                 Adi = kis.Is.Adi + " (" + kis.BaslangicTarihi.ToString("dd.MM.yyyy") + " - " +
                     (kis.BitisTarihi.HasValue ? kis.BitisTarihi.Value.ToString("dd.MM.yyyy") : "...") + ")"
             }).ToList();
@@ -58,7 +57,7 @@ namespace CvProject
             {
                 foreach (var item in isList)
                 {
-                    lbKisiIs.Items.Add(item);
+                    lbKisiIs.Items.Add(item.Adi);
                 }
             }
         }

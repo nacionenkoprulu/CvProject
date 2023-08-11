@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CvProject.Entities;
 
-public partial class KisiIs
+public class KisiIs
 {
     [Key]
     [Column(Order = 0)]
